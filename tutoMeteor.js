@@ -5,7 +5,16 @@ if (Meteor.isClient) {
   Template.hello.helpers({
     counter: function () {
       return Session.get('counter');
+    },
+
+     pluriel: function () {
+        if (Session.get('counter') > 1){
+          return "s";
+        } else {
+          return "";
+        }     
     }
+
   });
 
   Template.hello.events({
